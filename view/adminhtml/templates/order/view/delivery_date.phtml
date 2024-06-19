@@ -1,0 +1,10 @@
+<?php if ($deliveryDate = $block->getOrderDeliveryDate()): ?>
+    <section class="admin__page-section um-ordercomment">
+        <div class="admin__page-section-title">
+            <span class="title"><?= $block->escapeHtml(__('Delivery Date')) ?></span>
+        </div>
+        <div class="admin__page-section-content">
+            <?= nl2br($block->escapeHtml($deliveryDate)) ?>
+        </div>
+    </section>
+<?php endif; ?>

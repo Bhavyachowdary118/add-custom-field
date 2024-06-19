@@ -1,0 +1,7 @@
+<?php
+$deliveryDates = $block->getFormattedDeliveryDates();
+?>
+<script type="text/javascript">
+    window.checkoutConfig = window.checkoutConfig || {};
+    window.checkoutConfig.disabledDeliveryDates = <?= json_encode($deliveryDates) ?>;
+</script>

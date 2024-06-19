@@ -1,0 +1,7 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../lib/internal/Magento/Framework/ObjectManager/etc/config.xsd">
+
+    <!-- Plugin for getting the delivery date in extension attributes -->
+    <type name="Magento\Sales\Api\OrderRepositoryInterface">
+        <plugin name="kensium_delivery_repository_plugin" type="Kensium\Delivery\Plugin\OrderRepositoryPlugin" />
+    </type>
+</config>

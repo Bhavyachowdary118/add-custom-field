@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    
+    <!-- Adding delivery_date column to quote table -->
+    <table name="quote">
+        <column xsi:type="datetime" name="delivery_date" nullable="false" comment="Delivery Date"/>
+    </table>
+    
+    <!-- Adding delivery_date column to sales_order table -->
+    <table name="sales_order">
+        <column xsi:type="datetime" name="delivery_date" nullable="false" comment="Delivery Date"/>
+    </table>
+    
+    <!-- Adding delivery_date column to sales_order_grid table -->
+    <table name="sales_order_grid">
+        <column xsi:type="datetime" name="delivery_date" nullable="false" comment="Delivery Date"/>
+    </table>
+    
+    <!-- Creating Delivery Table and adding the fields -->
+    <table name="delivery" resource="default" engine="innodb" comment="Delivery Table">
+        <column xsi:type="int" name="number" nullable="false" identity="true" unsigned="true" comment="Number"/>
+        <column xsi:type="int" name="delivery_date" nullable="false" comment="Delivery Date"/>
+        <column xsi:type="int" name="delivery_month" nullable="false" comment="Delivery Month"/>
+        <column xsi:type="int" name="delivery_year" nullable="false"  comment="Delivery Year"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="number"/>
+        </constraint>
+    </table>
+</schema>
